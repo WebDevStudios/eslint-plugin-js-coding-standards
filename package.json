@@ -3,21 +3,14 @@
   "version": "1.0.0",
   "description": "ESlint customizations & custom rules.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git@github.com:WebDevStudios/js-coding-standards-eslint-custom.git"
   },
-  "keywords": [],
   "author": "WebDevStudios",
   "license": "GPL-2.0-or-later",
   "bugs": {
     "url": "https://github.com/WebDevStudios/js-coding-standards-eslint-custom/issues"
   },
-  "homepage": "https://github.com/WebDevStudios/js-coding-standards-eslint-custom#readme",
-  "dependencies": {
-  },
-  "devDependencies": {}
+  "homepage": "https://github.com/WebDevStudios/js-coding-standards-eslint-custom#readme"
 }

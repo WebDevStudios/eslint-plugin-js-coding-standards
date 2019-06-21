@@ -5,7 +5,7 @@
  */
 
 /* globals module */
-var wdscsUtils = ( function( wdscsUtils ) {
+var jsCodingStandardsEslintCustom = ( function( jsCodingStandardsEslintCustom ) {
 
 	/**
 	 * Get the content of a node.
@@ -16,7 +16,7 @@ var wdscsUtils = ( function( wdscsUtils ) {
 	 * @param  {Object} node The node.
 	 * @return {String}      The content of the node.
 	 */
-	wdscsUtils.getNodeContent = function( node ) {
+	jsCodingStandardsEslintCustom.getNodeContent = function( node ) {
 		return node.value.toLowerCase().trim();
 	};
 
@@ -29,7 +29,7 @@ var wdscsUtils = ( function( wdscsUtils ) {
 	 * @param  {String}  content The content.
 	 * @return {Boolean}         True if it is, false if not.
 	 */
-	wdscsUtils.isDocblock = function( content ) {
+	jsCodingStandardsEslintCustom.isDocblock = function( content ) {
 		return -1 !== content.indexOf( '\n' );
 	};
 
@@ -43,8 +43,8 @@ var wdscsUtils = ( function( wdscsUtils ) {
 	 * @param  {String} content The content of the docblock.
 	 * @return {Mixed}          True if it does, false if not, -1 if not a docblock.
 	 */
-	wdscsUtils.docBlockContentHasTag = function( tag, content ) {
-		if ( wdscsUtils.isDocblock( content ) ) {
+	jsCodingStandardsEslintCustom.docBlockContentHasTag = function( tag, content ) {
+		if ( jsCodingStandardsEslintCustom.isDocblock( content ) ) {
 
 			// If we don't have an @author in the content.
 			if ( -1 === content.indexOf( '@author' ) ) {
@@ -69,8 +69,8 @@ var wdscsUtils = ( function( wdscsUtils ) {
 	 * @param  {Object} node Node Object.
 	 * @return {Mixed}       True if it is, false if not, -1 if not a docblock.
 	 */
-	wdscsUtils.docBlockIsFileDocBlock = function( node ) {
-		if ( wdscsUtils.isDocblock( wdscsUtils.getNodeContent( node ) ) ) {
+	jsCodingStandardsEslintCustom.docBlockIsFileDocBlock = function( node ) {
+		if ( jsCodingStandardsEslintCustom.isDocblock( jsCodingStandardsEslintCustom.getNodeContent( node ) ) ) {
 
 			// If on the first line of the file.
 			if ( 0 === node.range[0] ) {
@@ -97,7 +97,7 @@ var wdscsUtils = ( function( wdscsUtils ) {
 	 * @param  {Object} node    Node Object.
 	 * @param  {string} tag     The tag, e.g. @since, @author.
 	 */
-	wdscsUtils.docBlockRequireTag = function( context, node, tag ) {
+	jsCodingStandardsEslintCustom.docBlockRequireTag = function( context, node, tag ) {
 
 		// Get the node of the associated docblock.
 		var docBlockNode = context.getJSDocComment( node );
@@ -106,10 +106,10 @@ var wdscsUtils = ( function( wdscsUtils ) {
 		if ( docBlockNode ) {
 
 			// Warn about missing @author tag.
-			if ( false === wdscsUtils.docBlockContentHasTag( tag, wdscsUtils.getNodeContent( docBlockNode ) ) ) {
+			if ( false === jsCodingStandardsEslintCustom.docBlockContentHasTag( tag, jsCodingStandardsEslintCustom.getNodeContent( docBlockNode ) ) ) {
 
 				// Report the message for that tag.
-				context.report( docBlockNode, wdscsUtils.messages.requiredTags[ tag ] );
+				context.report( docBlockNode, jsCodingStandardsEslintCustom.messages.requiredTags[ tag ] );
 			}
 		}
 	};
@@ -125,14 +125,14 @@ var wdscsUtils = ( function( wdscsUtils ) {
 	 * @param  {string} tag     The tag, e.g. @since, @author.
 	 * @param  {String} type    The type, e.g. FunctionExpression or *.
 	 */
-	wdscsUtils.docBlockRequireTagOnType = function( context, node, tag, type ) {
+	jsCodingStandardsEslintCustom.docBlockRequireTagOnType = function( context, node, tag, type ) {
 		if ( context.getJSDocComment( node ) ) {
 
 			// If e.g. * or FunctionDeclaration, etc...
 			if ( type === node.type ) {
 
 				// Require the tag on this thing.
-				wdscsUtils.docBlockRequireTag( context, node, tag );
+				jsCodingStandardsEslintCustom.docBlockRequireTag( context, node, tag );
 			}
 		}
 	};
@@ -148,7 +148,7 @@ var wdscsUtils = ( function( wdscsUtils ) {
 	 *
 	 * @see  https://docs.google.com/document/d/16-wN2i9Fe2fpq24PMMQqu80vBvCVNvm2kpgwtcfsJXE/edit Documentation of this requirement.
 	 */
-	wdscsUtils.isThemeFile = function( that ) {
+	jsCodingStandardsEslintCustom.isThemeFile = function( that ) {
 		if ( ! that.hasOwnProperty( 'getFilename' ) ) {
 			return false;
 		}
@@ -157,14 +157,14 @@ var wdscsUtils = ( function( wdscsUtils ) {
 	};
 
 	// Messages (so we can re-use them).
-	wdscsUtils.messages = {
+	jsCodingStandardsEslintCustom.messages = {
 		requiredTags: {
 			'@author': 'Documenting @author is helpful. If the author is unknown, you can use @author Unknown.',
 			'@since': 'Documenting the version this was introduced is recommended. If you aren\'t using any official versioning standard, consider using the date, e.g.: Friday, October 19, 2018.'
 		}
 	};
 
-	return wdscsUtils;
+	return jsCodingStandardsEslintCustom;
 } ( {} ) );
 
 /**
@@ -267,7 +267,7 @@ module.exports = {
 					 * @param  {Object} node Node Object.
 					 */
 					'*': function( node ) {
-						wdscsUtils.docBlockRequireTagOnType( context, node, '@author', 'FunctionDeclaration' );
+						jsCodingStandardsEslintCustom.docBlockRequireTagOnType( context, node, '@author', 'FunctionDeclaration' );
 					}
 				};
 			}
@@ -306,14 +306,14 @@ module.exports = {
 					'*': function( node ) {
 
 						// Is this a theme file?
-						if ( wdscsUtils.isThemeFile( this ) ) {
+						if ( jsCodingStandardsEslintCustom.isThemeFile( this ) ) {
 
 							// Do not apply this, see https://docs.google.com/document/d/16-wN2i9Fe2fpq24PMMQqu80vBvCVNvm2kpgwtcfsJXE/edit.
 							return;
 						}
 
 						// Require @since.
-						wdscsUtils.docBlockRequireTag( context, node, '@since' );
+						jsCodingStandardsEslintCustom.docBlockRequireTag( context, node, '@since' );
 					}
 				};
 			}
