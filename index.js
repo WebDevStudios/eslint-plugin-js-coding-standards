@@ -99,7 +99,7 @@ const jsCodingStandardsEslintCustom = ( function( pub ) {
 	pub.docBlockRequireTag = function( context, node, tag ) {
 
 		// Get the node of the associated docblock.
-		let docBlockNode = context.getJSDocComment( node );
+		const docBlockNode = context.getJSDocComment( node );
 
 		// We have a docblock.
 		if ( docBlockNode ) {
@@ -223,7 +223,7 @@ module.exports = {
 						) {
 
 							// See if there is a docblock.
-							let docBlockNode = context.getJSDocComment( node );
+							const docBlockNode = context.getJSDocComment( node );
 
 							// This assignment has no docblock!
 							if ( ! docBlockNode ) {
