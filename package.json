@@ -1,5 +1,5 @@
 {
-  "name": "@webdevstudios/eslint-plugin-wds-js-coding-standards-eslint-custom",
+  "name": "@webdevstudios/eslint-custom",
   "version": "1.0.0",
   "description": "ESlint customizations & custom rules.",
   "main": "index.js",
