@@ -157,10 +157,10 @@ const jsCodingStandardsEslintCustom = ( function( pub ) {
 
 	// Messages (so we can re-use them).
 	pub.messages = {
-		requiredTags: {
+		requiredTags: [
 			'@author': 'Documenting @author is helpful. If the author is unknown, you can use @author Unknown.',
 			'@since': 'Documenting the version this was introduced is recommended. If you aren\'t using any official versioning standard, consider using the date, e.g.: Friday, October 19, 2018.',
-		},
+		],
 	};
 
 	return pub;
