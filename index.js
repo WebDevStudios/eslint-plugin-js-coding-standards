@@ -4,8 +4,7 @@
  * @since 1.2.0
  */
 
-/* globals module */
-var jsCodingStandardsEslintCustom = ( function( jsCodingStandardsEslintCustom ) {
+const jsCodingStandardsEslintCustom = ( function( pub ) {
 
 	/**
 	 * Get the content of a node.
@@ -14,9 +13,9 @@ var jsCodingStandardsEslintCustom = ( function( jsCodingStandardsEslintCustom ) 
 	 * @since  1.2.0
 	 *
 	 * @param  {Object} node The node.
-	 * @return {String}      The content of the node.
+	 * @return {string}      The content of the node.
 	 */
-	jsCodingStandardsEslintCustom.getNodeContent = function( node ) {
+	pub.getNodeContent = function( node ) {
 		return node.value.toLowerCase().trim();
 	};
 
@@ -26,10 +25,10 @@ var jsCodingStandardsEslintCustom = ( function( jsCodingStandardsEslintCustom ) 
 	 * @author Aubrey Portwood <aubrey@webdevstudios.com>
 	 * @since  1.2.0
 	 *
-	 * @param  {String}  content The content.
-	 * @return {Boolean}         True if it is, false if not.
+	 * @param  {string}  content The content.
+	 * @return {boolean}         True if it is, false if not.
 	 */
-	jsCodingStandardsEslintCustom.isDocblock = function( content ) {
+	pub.isDocblock = function( content ) {
 		return -1 !== content.indexOf( '\n' );
 	};
 
@@ -39,12 +38,12 @@ var jsCodingStandardsEslintCustom = ( function( jsCodingStandardsEslintCustom ) 
 	 * @author Aubrey Portwood <aubrey@webdevstudios.com>
 	 * @since  1.2.0
 	 *
-	 * @param  {String} tag     The tag, e.g. @author, @since.
-	 * @param  {String} content The content of the docblock.
+	 * @param  {string} tag     The tag, e.g. @author, @since.
+	 * @param  {string} content The content of the docblock.
 	 * @return {Mixed}          True if it does, false if not, -1 if not a docblock.
 	 */
-	jsCodingStandardsEslintCustom.docBlockContentHasTag = function( tag, content ) {
-		if ( jsCodingStandardsEslintCustom.isDocblock( content ) ) {
+	pub.docBlockContentHasTag = function( tag, content ) {
+		if ( pub.isDocblock( content ) ) {
 
 			// If we don't have an @author in the content.
 			if ( -1 === content.indexOf( '@author' ) ) {
@@ -69,11 +68,11 @@ var jsCodingStandardsEslintCustom = ( function( jsCodingStandardsEslintCustom ) 
 	 * @param  {Object} node Node Object.
 	 * @return {Mixed}       True if it is, false if not, -1 if not a docblock.
 	 */
-	jsCodingStandardsEslintCustom.docBlockIsFileDocBlock = function( node ) {
-		if ( jsCodingStandardsEslintCustom.isDocblock( jsCodingStandardsEslintCustom.getNodeContent( node ) ) ) {
+	pub.docBlockIsFileDocBlock = function( node ) {
+		if ( pub.isDocblock( pub.getNodeContent( node ) ) ) {
 
 			// If on the first line of the file.
-			if ( 0 === node.range[0] ) {
+			if ( 0 === node.range[0] ) { // eslint-disable-line computed-property-spacing
 
 				// This docblock starts at the beginning of the file, e.g. line 0, must be file docblock.
 				return true;
@@ -97,19 +96,19 @@ var jsCodingStandardsEslintCustom = ( function( jsCodingStandardsEslintCustom ) 
 	 * @param  {Object} node    Node Object.
 	 * @param  {string} tag     The tag, e.g. @since, @author.
 	 */
-	jsCodingStandardsEslintCustom.docBlockRequireTag = function( context, node, tag ) {
+	pub.docBlockRequireTag = function( context, node, tag ) {
 
 		// Get the node of the associated docblock.
-		var docBlockNode = context.getJSDocComment( node );
+		const docBlockNode = context.getJSDocComment( node );
 
 		// We have a docblock.
 		if ( docBlockNode ) {
 
 			// Warn about missing @author tag.
-			if ( false === jsCodingStandardsEslintCustom.docBlockContentHasTag( tag, jsCodingStandardsEslintCustom.getNodeContent( docBlockNode ) ) ) {
+			if ( false === pub.docBlockContentHasTag( tag, pub.getNodeContent( docBlockNode ) ) ) {
 
 				// Report the message for that tag.
-				context.report( docBlockNode, jsCodingStandardsEslintCustom.messages.requiredTags[ tag ] );
+				context.report( docBlockNode, pub.messages.requiredTags[ tag ] );
 			}
 		}
 	};
@@ -123,16 +122,16 @@ var jsCodingStandardsEslintCustom = ( function( jsCodingStandardsEslintCustom ) 
 	 * @param  {Object} context Context Object.
 	 * @param  {Object} node    Node Object.
 	 * @param  {string} tag     The tag, e.g. @since, @author.
-	 * @param  {String} type    The type, e.g. FunctionExpression or *.
+	 * @param  {string} type    The type, e.g. FunctionExpression or *.
 	 */
-	jsCodingStandardsEslintCustom.docBlockRequireTagOnType = function( context, node, tag, type ) {
+	pub.docBlockRequireTagOnType = function( context, node, tag, type ) {
 		if ( context.getJSDocComment( node ) ) {
 
 			// If e.g. * or FunctionDeclaration, etc...
 			if ( type === node.type ) {
 
 				// Require the tag on this thing.
-				jsCodingStandardsEslintCustom.docBlockRequireTag( context, node, tag );
+				pub.docBlockRequireTag( context, node, tag );
 			}
 		}
 	};
@@ -144,11 +143,11 @@ var jsCodingStandardsEslintCustom = ( function( jsCodingStandardsEslintCustom ) 
 	 * @since  1.2.0
 	 *
 	 * @param  {Object}  that this object in create: below.
-	 * @return {Boolean}   True if it is, false if not.
+	 * @return {boolean}   True if it is, false if not.
 	 *
 	 * @see  https://docs.google.com/document/d/16-wN2i9Fe2fpq24PMMQqu80vBvCVNvm2kpgwtcfsJXE/edit Documentation of this requirement.
 	 */
-	jsCodingStandardsEslintCustom.isThemeFile = function( that ) {
+	pub.isThemeFile = function( that ) {
 		if ( ! that.hasOwnProperty( 'getFilename' ) ) {
 			return false;
 		}
@@ -157,21 +156,21 @@ var jsCodingStandardsEslintCustom = ( function( jsCodingStandardsEslintCustom ) 
 	};
 
 	// Messages (so we can re-use them).
-	jsCodingStandardsEslintCustom.messages = {
+	pub.messages = {
 		requiredTags: {
 			'@author': 'Documenting @author is helpful. If the author is unknown, you can use @author Unknown.',
-			'@since': 'Documenting the version this was introduced is recommended. If you aren\'t using any official versioning standard, consider using the date, e.g.: Friday, October 19, 2018.'
-		}
+			'@since': 'Documenting the version this was introduced is recommended. If you aren\'t using any official versioning standard, consider using the date, e.g.: Friday, October 19, 2018.',
+		},
 	};
 
-	return jsCodingStandardsEslintCustom;
+	return pub;
 } ( {} ) );
 
 /**
  * @see  https://eslint.org/docs/developer-guide/selectors
  */
 module.exports = {
-	'rules': {
+	rules: {
 
 		/**
 		 * Require function expressions to need docblock.
@@ -179,7 +178,7 @@ module.exports = {
 		 * @author Aubrey Portwood <aubrey@webdevstudios.com>
 		 * @since  1.2.0
 		 */
-		'functionExpressionRequireDocblock': {
+		functionExpressionRequireDocblock: {
 
 			/**
 			 * Rule Handler.
@@ -190,7 +189,7 @@ module.exports = {
 			 * @param  {Object} context Context handler.
 			 * @return {Object}         Handler object.
 			 */
-			create: function( context ) {
+			create( context ) {
 				return {
 
 					/**
@@ -201,7 +200,7 @@ module.exports = {
 					 *
 					 * @param  {Object} node Node Object.
 					 */
-					'FunctionExpression': function( node ) {
+					'FunctionExpression'( node ) {
 						if ( 'CallExpression' === node.parent.type ) {
 
 							// Don't run this on ife's or anonymous functions because they're hard to document.
@@ -219,21 +218,21 @@ module.exports = {
 							// E.g. return function( a, b ).
 							'ReturnStatement' === node.parent.type ||
 
-							// E.g. { thing: function( a, b ) }.
+							// E.g. { thing( a, b ) }.
 							'Property' === node.parent.type
 						) {
 
 							// See if there is a docblock.
-							var docBlockNode = context.getJSDocComment( node );
+							const docBlockNode = context.getJSDocComment( node );
 
 							// This assignment has no docblock!
 							if ( ! docBlockNode ) {
 								context.report( node, 'Adding a docblock to function expressions is helpful to understand any data coming in.' );
 							}
 						}
-					}
+					},
 				};
-			}
+			},
 		},
 
 		/**
@@ -255,7 +254,7 @@ module.exports = {
 			 * @param  {Object} context Context handler.
 			 * @return {Object}         Handler object.
 			 */
-			create: function( context ) {
+			create( context ) {
 				return {
 
 					/**
@@ -266,11 +265,11 @@ module.exports = {
 					 *
 					 * @param  {Object} node Node Object.
 					 */
-					'*': function( node ) {
+					'*'( node ) {
 						jsCodingStandardsEslintCustom.docBlockRequireTagOnType( context, node, '@author', 'FunctionDeclaration' );
-					}
+					},
 				};
-			}
+			},
 		},
 
 		/**
@@ -292,7 +291,7 @@ module.exports = {
 			 * @param  {Object} context Context handler.
 			 * @return {Object}         Handler object.
 			 */
-			create: function( context ) {
+			create( context ) {
 				return {
 
 					/**
@@ -303,7 +302,7 @@ module.exports = {
 					 *
 					 * @param  {Object} node Node Object.
 					 */
-					'*': function( node ) {
+					'*'( node ) {
 
 						// Is this a theme file?
 						if ( jsCodingStandardsEslintCustom.isThemeFile( this ) ) {
@@ -314,9 +313,9 @@ module.exports = {
 
 						// Require @since.
 						jsCodingStandardsEslintCustom.docBlockRequireTag( context, node, '@since' );
-					}
+					},
 				};
-			}
-		}
-	}
+			},
+		},
+	},
 };
