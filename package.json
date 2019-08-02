@@ -14,7 +14,6 @@
   },
   "homepage": "https://github.com/WebDevStudios/js-coding-standards-eslint-custom#readme",
   "devDependencies": {
-    "@webdevstudios/eslint-config-js-coding-standards": "git+ssh://git@github.com/WebDevStudios/js-coding-standards.git",
-    "eslint": "^6.0.1"
+    "eslint": "^6.1.0"
   }
 }
