@@ -46,7 +46,7 @@ const jsCodingStandardsEslintCustom = ( function( pub ) {
 		if ( pub.isDocblock( content ) ) {
 
 			// If we don't have an @author in the content.
-			if ( -1 === content.indexOf( '@author' ) ) {
+			if ( -1 === content.indexOf( tag ) ) {
 
 				// Does not have an @author.
 				return false;
