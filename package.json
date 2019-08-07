@@ -1,5 +1,5 @@
 {
-  "name": "@webdevstudios/eslint-custom",
+  "name": "@webdevstudios/eslint-plugin-custom",
   "version": "1.0.0",
   "description": "ESlint customizations & custom rules.",
   "main": "index.js",
