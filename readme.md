@@ -11,5 +11,8 @@ ESlint customizations & custom rules.
 - __Greg Rickaby (Director of Engineering)__
     + High level Approval / Leadership
 
+# Changelog
 
+## 0.1.0
 
+- Working version that works with js-coding-standards
