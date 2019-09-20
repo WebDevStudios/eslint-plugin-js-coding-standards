@@ -11,9 +11,7 @@ ESlint customizations & custom rules plugin that works with [js-coding-standards
 
 ## Installation
 
-- [See installation instructions for JS Coding Standards](https://github.com/WebDevStudios/js-coding-standards)
-
-_This is a dependency of `js-coding-standards`, so you shouldn't have to install this directly, just install `js-coding-standards` above._
+Install [`@webdevstudios/js-coding-standards`](https://github.com/WebDevStudios/js-coding-standards)
 
 ___________________
 
