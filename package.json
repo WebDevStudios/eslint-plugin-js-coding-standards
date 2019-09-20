@@ -1,6 +1,6 @@
 {
-  "name": "@webdevstudios/eslint-plugin-custom",
-  "version": "1.0.0-alpha1",
+  "name": "@webdevstudios/eslint-plugin-js-coding-standards",
+  "version": "1.0.0-beta1",
   "description": "ESlint customizations & custom rules.",
   "main": "index.js",
   "repository": {

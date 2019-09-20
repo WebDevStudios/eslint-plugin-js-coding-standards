@@ -1,6 +1,6 @@
-# WebDevStudios JS Coding Standards (Custom)
+# WebDevStudios JS Coding Standards (ESLint Custom Plugin)
 
-ESlint customizations & custom rules plugin that works with [js-coding-standards](https://github.com/WebDevStudios/js-coding-standards) by providing custom lints.
+ESlint plugin with custom rules that work with [js-coding-standards](https://github.com/WebDevStudios/js-coding-standards).
 
 <a href="https://webdevstudios.com/contact/"><img src="https://webdevstudios.com/wp-content/uploads/2018/04/wds-github-banner.png" alt="WebDevStudios. WordPress for big brands."></a>
 
