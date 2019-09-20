@@ -1,4 +1,4 @@
-# WebDevStudios JS Coding Standards (ESLint Custom Plugin)
+# WebDevStudios JS Coding Standards ESLint Plugin
 
 ESlint plugin with custom rules that work with [js-coding-standards](https://github.com/WebDevStudios/js-coding-standards).
 
