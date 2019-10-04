@@ -1,21 +1,22 @@
-# WebDevStudios JS Coding Standards ESLint Plugin
-
-ESlint plugin with custom rules that work with [js-coding-standards](https://github.com/WebDevStudios/js-coding-standards).
-
 <a href="https://webdevstudios.com/contact/"><img src="https://webdevstudios.com/wp-content/uploads/2018/04/wds-github-banner.png" alt="WebDevStudios. WordPress for big brands."></a>
 
-## Leadership
+# WebDevStudios JS Coding Standards ESLint Plugin
 
-- [Aubrey Portwood](https://github.com/aubreypwd) - Project Lead
-- [Greg Rickaby](https://github.com/gregrickaby) - Director of Engineering
+ESlint plugin with custom rules that work with [`@webdevstudios/js-coding-standards`](https://github.com/WebDevStudios/js-coding-standards).
 
-## Installation
+## How to Install
 
 Install [`@webdevstudios/js-coding-standards`](https://github.com/WebDevStudios/js-coding-standards)
 
 ___________________
 
 # Changelog
+
+## 1.0.0-beta2
+
+- Required `eslint@~6.1.0`
+- Setup for publishing on npmjs.org
+- Updates to README
 
 ## 1.0.0-beta1
 
