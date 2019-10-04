@@ -12,6 +12,11 @@ ___________________
 
 # Changelog
 
+## 1.0.0-beta2
+
+- Setup for publishing on npmjs.org
+- Updates to README
+
 ## 1.0.0-beta1
 
 - No changes, synced version with `js-coding-standards` as it's now in beta state

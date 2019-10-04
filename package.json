@@ -15,5 +15,12 @@
   "homepage": "https://github.com/WebDevStudios/js-coding-standards-eslint-custom#readme",
   "devDependencies": {
     "eslint": "^6.1.0"
-  }
+  },
+  "contributors": [
+    {
+      "name": "Aubrey Portwood",
+      "email": "aubrey@webdevstudios",
+      "url": "http://webdevstudios.com"
+    }
+  ]
 }
