@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:WebDevStudios/js-coding-standards-eslint-custom.git"
+    "url": "git@github.com:WebDevStudios/eslint-plugin-js-coding-standards.git"
   },
   "author": "WebDevStudios",
   "license": "GPL-2.0-or-later",
