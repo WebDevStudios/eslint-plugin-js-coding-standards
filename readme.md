@@ -14,6 +14,7 @@ ___________________
 
 ## 1.0.0-beta2
 
+- Required `eslint@~6.1.0`
 - Setup for publishing on npmjs.org
 - Updates to README
 
