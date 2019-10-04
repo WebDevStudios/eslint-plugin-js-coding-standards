@@ -12,6 +12,10 @@ ___________________
 
 # Changelog
 
+## 1.0.0-beta3.2
+
+- Updated Aubrey's email so he shows up as collaborator
+
 ## 1.0.0-beta3.1
 
 - More minor updates to `package.json`
