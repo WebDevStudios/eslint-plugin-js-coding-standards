@@ -12,6 +12,10 @@ ___________________
 
 # Changelog
 
+## 1.0.0-beta3
+
+- Minor updates to `package.json`
+
 ## 1.0.0-beta2
 
 - Required `eslint@~6.1.0`
