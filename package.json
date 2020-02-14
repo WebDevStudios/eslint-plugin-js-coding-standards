@@ -1,7 +1,7 @@
 {
   "name": "@webdevstudios/eslint-plugin-js-coding-standards",
   "version": "1.0.0-beta3.3",
-  "description": "WebDevStudios JS Coding Standards ESLint Plugin.",
+  "description": "WebDevStudios JS Coding Standards ESLint Plugin for custom standards.",
   "main": "index.js",
   "repository": {
     "type": "git",
