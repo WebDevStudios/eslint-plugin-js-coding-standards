@@ -12,6 +12,10 @@ ___________________
 
 # Changelog
 
+## 1.0.0
+
+- Stable release
+
 ## 1.0.0-beta3.3
 
 - Required `eslint@~6.1.0` as `--prod` instead of `--dev`, fixes [#2](https://github.com/WebDevStudios/eslint-plugin-js-coding-standards/issues/2)
