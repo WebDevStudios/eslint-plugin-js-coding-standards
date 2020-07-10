@@ -12,7 +12,7 @@ ___________________
 
 # Changelog
 
-## NEXT
+## 1.0.1-RC1
 
 - Bump `eslint` to `>=6.8.0` so other packages can flatten out to bigger packages
 
