@@ -14,7 +14,7 @@ ___________________
 
 ## NEXT
 
-- Bump `eslint` to `>=6.8.0` so other packages can flatten our to bigger packages
+- Bump `eslint` to `>=6.8.0` so other packages can flatten out to bigger packages
 
 ## 1.0.0
 
