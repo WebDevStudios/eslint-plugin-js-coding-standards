@@ -21,7 +21,5 @@
       "url": "http://webdevstudios.com"
     }
   ],
-  "dependencies": {
-    "eslint": "~6.1.0"
-  }
+  "dependencies": {}
 }
