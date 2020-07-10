@@ -12,6 +12,10 @@ ___________________
 
 # Changelog
 
+## NEXT
+
+- Bump `eslint` to `>=6.8.0` so other packages can flatten our to bigger packages
+
 ## 1.0.0
 
 - Stable release
