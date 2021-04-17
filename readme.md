@@ -2,6 +2,12 @@
 
 # WebDevStudios JS Coding Standards ESLint Plugin
 
+----
+
+**This package is DEPRECATED and no longer in use at WebDevStudios and will no longer be maintained.**
+
+----
+
 ESlint plugin with custom rules that work with [`@webdevstudios/js-coding-standards`](https://github.com/WebDevStudios/js-coding-standards).
 
 ## How to Install
